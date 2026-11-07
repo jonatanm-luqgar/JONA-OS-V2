@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    // JONA PMI: shared workspace for the no-password, anonymous-access setup.
+    match /users/shared/{document=**} { allow read, write: if signedIn(); }
+    // Mi agenda personal: one shared sync key across all devices.
+    match /artifacts/mi-agenda-diaria/users/jona-os-shared/{document=**} { allow read, write: if signedIn(); }
+    // JonaRPG: preserves the existing shared document and related RPG data.
+    match /rpg/{document=**} { allow read, write: if signedIn(); }
+  }
+}

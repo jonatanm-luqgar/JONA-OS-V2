@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827"><title>JONA OS · PMI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="authView" class="auth-wrap">
+    <div class="auth-card"><div class="brand-mark">J</div><p class="eyebrow">PERSONAL OPERATING SYSTEM</p><h1>JONA OS</h1><p id="authMessage" class="muted">Conectando de forma segura con Firebase…</p></div>
+  </div>
+  <div id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark small">J</div><div><b>JONA OS</b><small>PERSONAL SYSTEM</small></div></div>
+      <div class="version-switch"><span>Versión</span><select id="versionSelect"><option value="1">1.0 · Fundamentos</option><option value="2">2.0 · Agile</option><option value="3">3.0 · Intelligence</option></select></div>
+      <nav id="navigation">
+        <button data-page="dashboard" class="nav-item active">◫ <span>Resumen</span></button>
+        <button data-page="areas" class="nav-item">◈ <span>Áreas de vida</span></button>
+        <button data-page="goals" class="nav-item">◎ <span>Objetivos</span></button>
+        <button data-page="projects" class="nav-item">▣ <span>Proyectos</span></button>
+        <button data-page="tasks" class="nav-item">☷ <span>Tareas</span></button>
+        <div class="nav-divider">EJECUCIÓN ÁGIL · V2</div>
+        <button data-page="sprints" class="nav-item v2">◷ <span>Sprints</span></button>
+        <button data-page="kanban" class="nav-item v2">▤ <span>Tablero Kanban</span></button>
+        <button data-page="calendar" class="nav-item v2">▦ <span>Agenda</span></button>
+        <button data-page="habits" class="nav-item v2">✳ <span>Hábitos</span></button>
+        <button data-page="retros" class="nav-item v2">↻ <span>Retrospectivas</span></button>
+        <div class="nav-divider">ANÁLISIS · V3</div>
+        <button data-page="analytics" class="nav-item v3">▥ <span>Indicadores</span></button>
+        <button data-page="budget" class="nav-item v3">€ <span>Presupuesto</span></button>
+      </nav>
+      <div class="sidebar-bottom"><span id="userEmail" class="muted tiny"></span><button id="logoutBtn" class="logout">Cerrar sesión ↗</button></div>
+    </aside>
+    <main class="main"><header class="topbar"><div><p class="eyebrow" id="pageEyebrow">CENTRO DE CONTROL</p><h1 id="pageTitle">Resumen</h1></div><div class="top-actions"><span id="todayLabel" class="muted"></span><button id="quickAdd" class="primary compact">＋ Nueva tarea</button></div></header>
+      <section id="pageContent" class="content"></section>
+      <footer>JONA OS · Planificar. Ejecutar. Medir. Mejorar.</footer>
+    </main>
+  </div>
+  <dialog id="itemDialog"><form method="dialog" id="itemForm"><div class="dialog-head"><div><p class="eyebrow">JONA OS</p><h2 id="dialogTitle">Nuevo elemento</h2></div><button class="icon-button" value="cancel" aria-label="Cerrar">×</button></div><div id="formFields" class="form-grid"></div><div class="dialog-actions"><button class="secondary" value="cancel">Cancelar</button><button class="primary" id="saveItem" value="default">Guardar</button></div></form></dialog>
+  <div id="toast" class="toast" role="status"></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
